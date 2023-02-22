@@ -2,10 +2,10 @@ docker run -v /path/to/input_file:/input starspace
 docker build -t starspace .
 
 
-CMD /app/Starspace/starspace train -trainFile /app/Data/starspace_input_file.txt -model /app/Export/starspace_embeddings.txt
+CMD /app/Starspace/starspace train -trainFile /app/input/starspace_input_file.txt -model /app/output/starspace_embeddings.txt
 
 
-CMD ["/bin/bash", "-c", "echo 'Running container'; /app/Starspace/starspace train -trainFile /app/Data/starspace_input_file.txt -model /app/Export/starspace_embeddings.txt && echo 'Success!'"]
+CMD ["/bin/bash", "-c", "echo 'Running container'; /app/Starspace/starspace train -trainFile /app/input/starspace_input_file.txt -model /app/output/starspace_embeddings.txt && echo 'Success!'"]
 
 docker run -v /path/to/input:/app/input -v /path/to/output:/app/output starspace
 
