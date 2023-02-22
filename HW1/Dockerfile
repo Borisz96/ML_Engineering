@@ -38,6 +38,5 @@ COPY starspace_input_file.txt /input/starspace_input_file.txt
 #    -model modelSaveFile \
 #    && cp modelSaveFile /input/starspace_embeddings.txt
 
+# Command to run the Starspace program to train embeddings using the input file and save the output
 CMD ["/bin/bash", "-c", "echo 'Running container...'; /app/Starspace/starspace train -trainFile /app/input/starspace_input_file.txt -model /app/output/starspace_embeddings.txt && echo 'Success'"]
-
-
