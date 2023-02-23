@@ -12,12 +12,12 @@ Dockerfile
 10. Command to run the Starspace program to train embeddings using the input file and save the output
 
 # CMD /app/Starspace/starspace train -trainFile /app/input/starspace_input_file.txt -model /app/output/starspace_embeddings.txt
-
 # CMD ["/bin/bash", "-c", "echo 'Running container'; /app/Starspace/starspace train -trainFile /app/input/starspace_input_file.txt -model /app/output/starspace_embeddings.txt && echo 'Success!'"]
 
-
+#Building the docker image called starspace
 docker build -t starspace .
 
 docker run -v /path/to/input:/app/input -v /path/to/output:/app/output starspace
 
+# Running the container with volume mappings from the starspace image
 docker run -v ~/ML_Engineering/HW1/starspace_input_file.txt:/app/volume/starspace_input_file.txt -v ~/ML_Engineering/HW1/volume:/app/output starspace
