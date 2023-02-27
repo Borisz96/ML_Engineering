@@ -9,4 +9,4 @@ CMD ["/bin/bash", "-c", "echo 'Running container'; /app/Starspace/starspace trai
 
 docker run -v /path/to/input:/app/input -v /path/to/output:/app/output starspace
 
-docker run -v ~/ML_Engineering/HW1/starspace_input_file.txt:/app/volume/starspace_input_file.txt -v ~/ML_Engineering/HW1/volume:/app/output starspace
+docker run -v ~/ML_Engineering/HW1/volume/starspace_input_file.txt:/app/input/starspace_input_file.txt -v ~/ML_Engineering/HW1/volume:/app/output starspace
