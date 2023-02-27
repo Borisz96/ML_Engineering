@@ -19,9 +19,9 @@ docker build -t starspace .
 
 docker run -v /path/to/input:/app/input -v /path/to/output:/app/output starspace
 
-<<<<<<< HEAD
+
 docker run -v ~/ML_Engineering/HW1/volume/starspace_input_file.txt:/app/input/starspace_input_file.txt -v ~/ML_Engineering/HW1/volume:/app/output starspace
-=======
-# Running the container with volume mappings from the starspace image
+
+# Running the container with volume mappings with the starspace image
 docker run -v ~/ML_Engineering/HW1/volume/starspace_input_file.txt:/app/input/starspace_input_file.txt -v ~/ML_Engineering/HW1/volume:/app/output starspace
 
