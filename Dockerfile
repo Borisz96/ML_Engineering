@@ -30,7 +30,6 @@ RUN mkdir /output
 
 #Copy input file
 #COPY ./input/starspace_input_file.txt /input/starspace_input_file.txt
-#COPY starspace_input_file.txt /input/starspace_input_file.txt
 
 # Train the model on the input file and save the embeddings to the host machine
 #CMD ./starspace train \
