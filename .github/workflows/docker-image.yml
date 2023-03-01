@@ -17,7 +17,7 @@ jobs:
       - name: Build and Push Docker image
         uses: mr-smithers-excellent/docker-build-push@v5
         with:
-          image: mikloskosarszky/docker_miki
+          image: mikloskosarszky/docker_miki:starspace
           registry: docker.io
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
