@@ -11,6 +11,8 @@ Dockerfile
 9. Train the model on the input file and save the embeddings to the host machine
 10. Command to run the Starspace program to train embeddings using the input file and save the output
 
+sudo usermod -aG docker $USER
+
 # CMD /app/Starspace/starspace train -trainFile /app/input/starspace_input_file.txt -model /app/output/starspace_embeddings.txt
 # CMD ["/bin/bash", "-c", "echo 'Running container'; /app/Starspace/starspace train -trainFile /app/input/starspace_input_file.txt -model /app/output/starspace_embeddings.txt && echo 'Success!'"]
 
