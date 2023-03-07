@@ -1,3 +1,15 @@
+What is Docker? 
+
+Docker is a popular platform for developing and deploying applications in a containerized environment. In Docker, there are two primary concepts that you should understand: Docker image and Docker container.
+
+Docker image
+
+A Docker image is a read-only template that contains a set of instructions for creating a Docker container. It is essentially a snapshot of the application and its dependencies, including the operating system, libraries, and other files required to run the application. Docker images are typically created using a Dockerfile, which is a text file that specifies the instructions for building the image.
+
+Docker container
+
+A Docker container, on the other hand, is a running instance of a Docker image. It is a lightweight and portable executable package that contains everything needed to run an application, including the application code, runtime, system tools, libraries, and settings. A Docker container can be started, stopped, and restarted without affecting the host system or other containers running on the same host.
+
 Dockerfile
 
 1. Start with a base image of the latest version of Ubuntu
