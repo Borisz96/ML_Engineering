@@ -14,7 +14,7 @@ Dockerfile
 # CMD /app/Starspace/starspace train -trainFile /app/input/starspace_input_file.txt -model /app/output/starspace_embeddings.txt
 # CMD ["/bin/bash", "-c", "echo 'Running container'; /app/Starspace/starspace train -trainFile /app/input/starspace_input_file.txt -model /app/output/starspace_embeddings.txt && echo 'Success!'"]
 
-# Building the docker image called starspace
+#Building the docker image called starspace
 docker build -t starspace .
 
 docker run -v /path/to/input:/app/input -v /path/to/output:/app/output starspace
