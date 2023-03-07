@@ -2,11 +2,11 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ '*' ]
+    branches: [ 'main','docker' ]
     paths:
       - "HW1/**"
   pull_request:
-    branches: [ '*' ]
+    branches: [ 'main','docker' ]
     paths:
       - "HW1/**"
 
