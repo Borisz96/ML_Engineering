@@ -3,8 +3,12 @@ name: Docker Image CI
 on:
   push:
     branches: [ "*" ]
+    paths:
+      - "HW1/**"
   pull_request:
     branches: [ "*" ]
+    paths:
+      - "HW1/**"
 
 jobs:
   build:
