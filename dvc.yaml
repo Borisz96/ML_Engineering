@@ -4,15 +4,15 @@ stages:
     outs:
       - data/preprocessed_dataset.csv
   train:
-    cmd: python train.py data/preprocessed_dataset.csv model.pkl
+    cmd: python train.py data/preprocessed_dataset.csv best_model.pkl
     outs:
       - best_model.pkl
     deps:
       - data/preprocessed_dataset.csv
   evaluate:
-    cmd: python evaluate.py best_model.pkl data/preprocessed_dataset.csv
+    cmd: python train.py best_model.pkl data/preprocessed_dataset.csv
     outs:
-      - evaluation.txt
+      - best_accuracy.txt
     deps:
       - best_model.pkl
       - data/preprocessed_dataset.csv
