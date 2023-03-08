@@ -1,25 +1,25 @@
 stages:
   preprocess:
-    cmd: python preprocess.py data/my_dataset.csv data/preprocessed_dataset.csv
+    cmd: python preprocess.py data/mushrooms.csv data/preprocessed_dataset.csv
     outs:
       - data/preprocessed_dataset.csv
   train:
     cmd: python train.py data/preprocessed_dataset.csv model.pkl
     outs:
-      - model.pkl
+      - best_model.pkl
     deps:
       - data/preprocessed_dataset.csv
   evaluate:
-    cmd: python evaluate.py model.pkl data/preprocessed_dataset.csv
+    cmd: python evaluate.py best_model.pkl data/preprocessed_dataset.csv
     outs:
       - evaluation.txt
     deps:
-      - model.pkl
+      - best_model.pkl
       - data/preprocessed_dataset.csv
   feature_importance:
-    cmd: python feature_importance.py model.pkl data/preprocessed_dataset.csv feature_importance.png
+    cmd: python feature_importance.py best_model.pkl data/preprocessed_dataset.csv feature_importance.png
     outs:
       - feature_importance.png
     deps:
-      - model.pkl
+      - best_model.pkl
       - data/preprocessed_dataset.csv
