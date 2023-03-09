@@ -9,13 +9,13 @@ stages:
       - best_model.pkl
     deps:
       - data/preprocessed_dataset.csv
-  evaluate:
-    cmd: python train.py best_model.pkl data/preprocessed_dataset.csv
-    outs:
-      - best_accuracy.txt
-    deps:
-      - best_model.pkl
-      - data/preprocessed_dataset.csv
+#  evaluate:
+#    cmd: python train.py best_model.pkl data/preprocessed_dataset.csv
+#    outs:
+#      - best_accuracy.txt
+#    deps:
+#      - best_model.pkl
+#      - data/preprocessed_dataset.csv
   feature_importance:
     cmd: python feature_importance.py best_model.pkl data/preprocessed_dataset.csv feature_importance.png
     outs:

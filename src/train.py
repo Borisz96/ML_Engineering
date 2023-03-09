@@ -6,6 +6,7 @@ from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
 from sklearn.metrics import accuracy_score
 import pickle
 import dvc.api
+from preprocess import *
 import sys
 
 # input_file = sys.argv[1]

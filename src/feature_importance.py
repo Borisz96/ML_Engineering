@@ -7,6 +7,9 @@ from sklearn.metrics import accuracy_score
 import pickle
 import dvc.api
 import sys
+import matplotlib.pyplot as plt
+import numpy as np
+from train import *
 
 # Calculate feature importances
 importances = best_clf.feature_importances_
