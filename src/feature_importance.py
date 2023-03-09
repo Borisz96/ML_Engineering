@@ -1,12 +1,5 @@
-import pandas as pd
-from sklearn.linear_model import LogisticRegression
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
-from sklearn.metrics import accuracy_score
 import pickle
 import dvc.api
-import sys
 import matplotlib.pyplot as plt
 import numpy as np
 from train import *
