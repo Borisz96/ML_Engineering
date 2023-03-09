@@ -1,14 +1,18 @@
 stages:
   preprocess:
-    cmd: python preprocess.py data/mushrooms.csv data/preprocessed_dataset.csv
+    cmd: python src/preprocess.py data/mushrooms.csv
+    params:
+      - requirements: requirements.txt
     outs:
-      - data/preprocessed_dataset.csv
+      - X_train, X_test, y_train, y_test
   train:
-    cmd: python train.py data/preprocessed_dataset.csv best_model.pkl
+    cmd: python src/train.py data/mushrooms.csv best_model.pkl
+    params:
+      - requirements: requirements.txt
     outs:
       - best_model.pkl
     deps:
-      - data/preprocessed_dataset.csv
+      - data/mushrooms.csv
 #  evaluate:
 #    cmd: python train.py best_model.pkl data/preprocessed_dataset.csv
 #    outs:
@@ -17,9 +21,11 @@ stages:
 #      - best_model.pkl
 #      - data/preprocessed_dataset.csv
   feature_importance:
-    cmd: python feature_importance.py best_model.pkl data/preprocessed_dataset.csv feature_importance.png
+    cmd: python src/feature_importance.py best_model.pkl data/mushrooms.csv feature_importance.png
+    params:
+      - requirements: requirements.txt
     outs:
       - feature_importance.png
     deps:
       - best_model.pkl
-      - data/preprocessed_dataset.csv
+      - data/mushrooms.csv

@@ -1,4 +1,3 @@
-import pandas as pd
 from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.neighbors import KNeighborsClassifier
@@ -37,10 +36,10 @@ print("Accuracy score:", scores[best_clf])
 best_accuracy = scores[best_clf]
 
 # Log the best model and its accuracy
-with dvc.api.open('best_model.pkl', 'wb') as file:
-    pickle.dump(best_clf, file)
-
-with dvc.api.open('best_accuracy.txt', 'w') as file:
-    file.write(str(best_accuracy))
+# with dvc.api.open('best_model.pkl', 'wb') as file:
+#     pickle.dump(best_clf, file)
+#
+# with dvc.api.open('best_accuracy.txt', 'w') as file:
+#     file.write(str(best_accuracy))
 
     # return best_clf, best_accuracy
