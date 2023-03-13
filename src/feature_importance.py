@@ -11,7 +11,7 @@ importances = best_clf.feature_importances_
 indices = np.argsort(importances)[::-1]
 
 # Rearrange feature names so they match the sorted feature importances
-names = [feature_cols[i] for i in indices]
+names = [X_train.columns[i] for i in indices]
 
 # Create plot
 plt.figure()
@@ -20,10 +20,10 @@ plt.figure()
 plt.title("Feature Importance")
 
 # Add bars
-plt.bar(range(X_train[feature_cols].shape[1]), importances[indices])
+plt.bar(range(X_train.shape[1]), importances[indices])
 
 # Add feature names as x-axis labels
-plt.xticks(range(X_train[feature_cols].shape[1]), names, rotation=90)
+plt.xticks(range(X_train.shape[1]), names, rotation=90)
 
 # Show plot
 plt.show()
