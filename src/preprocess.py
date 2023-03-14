@@ -7,7 +7,7 @@ import sys
 # output_file = sys.argv[2]
 
 # def read_data(path):
-df = pd.read_csv('../data/mushrooms.csv')
+df = pd.read_csv('./data/mushrooms.csv')
 
 # create a LabelEncoder object
 le = LabelEncoder()
@@ -20,6 +20,7 @@ X = df.drop('class', axis=1)
 y = df['class']
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+df.to_csv('./data/prepared/mushrooms_prepared.csv', index=False)
 
     # return X_train, X_test, y_train, y_test
 
