@@ -2,7 +2,7 @@ stages:
   preprocess:
     cmd: python src/preprocess.py data/mushrooms.csv
     outs:
-      - data/prepared
+      - data/prepared/mushrooms_prepared.csv
     deps:
       - data/mushrooms.csv
       - src/preprocess.py
