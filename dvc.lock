@@ -1,0 +1,38 @@
+schema: '2.0'
+stages:
+  train:
+    cmd: python src/train.py data/mushrooms.csv best_model.pkl
+    deps:
+    - path: data/mushrooms.csv
+      md5: 20e36f0bcc0fec359eb394ee947237dd
+      size: 374003
+    outs:
+    - path: best_model.pkl
+      md5: aea8c7adab7a2ab7144558459e3e9ef8
+      size: 37
+  feature_importance:
+    cmd: python src/feature_importance.py best_model.pkl data/mushrooms.csv feature_importance.png
+    deps:
+    - path: best_model.pkl
+      md5: aea8c7adab7a2ab7144558459e3e9ef8
+      size: 37
+    - path: data/mushrooms.csv
+      md5: 20e36f0bcc0fec359eb394ee947237dd
+      size: 374003
+    outs:
+    - path: feature_importance.png
+      md5: bfeb11f76cebbd00c3b0edc5e17de808
+      size: 2396
+  preprocess:
+    cmd: python src/preprocess.py data/mushrooms.csv
+    deps:
+    - path: data/mushrooms.csv
+      md5: 20e36f0bcc0fec359eb394ee947237dd
+      size: 374003
+    - path: src/preprocess.py
+      md5: 8c952c81022b3604f620684af2bae20b
+      size: 636
+    outs:
+    - path: data/prepared/mushrooms_prepared.csv
+      md5: baabe6654bf409e3b93ab5d3c74e8687
+      size: 383417
