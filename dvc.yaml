@@ -5,8 +5,9 @@ stages:
       - data/prepared
     deps:
       - data/mushrooms.csv
+      - src/preprocess.py
   train:
-    cmd: python src/train.py data/mushrooms.csv best_model.pkl
+    cmd: python src/train.py data/mushrooms.csv data/prepared best_model.pkl
     outs:
       - best_model.pkl
     deps:
