@@ -5,7 +5,8 @@ import numpy as np
 from train import *
 
 # Calculate feature importances
-importances = best_clf.feature_importances_
+# best_model = best_clf+'()'
+importances = DecisionTreeClassifier().fit(X_train, y_train).feature_importances_
 
 # Sort feature importances in descending order
 indices = np.argsort(importances)[::-1]
@@ -27,3 +28,6 @@ plt.xticks(range(X_train.shape[1]), names, rotation=90)
 
 # Show plot
 plt.show()
+
+# Save figure
+plt.savefig('./feature_importance.png')
