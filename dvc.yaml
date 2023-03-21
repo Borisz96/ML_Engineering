@@ -1,0 +1,28 @@
+stages:
+  preprocess:
+    cmd: python src/preprocess.py data/mushrooms.csv
+    outs:
+      - data/prepared/mushrooms_prepared.csv
+    deps:
+      - data/mushrooms.csv
+      - src/preprocess.py
+  train:
+    cmd: python src/train.py data/mushrooms.csv best_model.pkl
+    outs:
+      - best_model.pkl
+    deps:
+      - data/mushrooms.csv
+#  evaluate:
+#    cmd: python train.py best_model.pkl data/preprocessed_dataset.csv
+#    outs:
+#      - best_accuracy.txt
+#    deps:
+#      - best_model.pkl
+#      - data/preprocessed_dataset.csv
+  feature_importance:
+    cmd: python src/feature_importance.py best_model.pkl data/mushrooms.csv feature_importance.png
+    outs:
+      - feature_importance.png
+    deps:
+      - best_model.pkl
+      - data/mushrooms.csv
