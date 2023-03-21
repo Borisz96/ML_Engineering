@@ -5,3 +5,4 @@
 5. dvc push
 
 6. dvc repro
+7. dvc status
